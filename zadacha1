@@ -1,0 +1,39 @@
+#include <iostream>
+#include <malloc.h>
+
+int main()
+{
+	int N,b,n=0;
+	int* a;
+	scanf_s("%d",&b);
+	scanf_s("%d", &N);
+	a = (int*)malloc(n * sizeof(int));
+	while (N!=0)
+	{
+		n++;
+		a = (int*)realloc(a,n * sizeof(int));
+		a[n - 1] = N % b;
+		N = N / b;
+	}
+	if (n == 0)
+		printf("0");
+	else
+		for (int i = n - 1; i >= 0; i--)
+		{
+			if (a[i] == 10)
+				printf("a");
+			else if (a[i] == 11)
+				printf("b");
+			else if (a[i] == 12)
+				printf("c");
+			else if (a[i] == 13)
+				printf("d");
+			else if (a[i] == 14)
+				printf("e");
+			else if (a[i] == 15)
+				printf("f");
+			else
+				printf("%d", a[i]);
+		}
+	free(a);
+}
