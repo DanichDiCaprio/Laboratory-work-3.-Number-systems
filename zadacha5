@@ -1,0 +1,162 @@
+ #include <iostream>
+
+int main()
+{
+int* a, sys1 = 0, sys2 = 0, sum = 0, st = 0;
+char n[100];
+scanf_s("%d%d", &sys1, &sys2);
+gets_s(n);
+int dl = 0;
+dl = strlen(n);
+st = dl - 2;
+a = (int*)malloc((dl - 1) * sizeof(int));
+for (int j = 1; j < dl; j++)
+{
+if (n[j] == '0')
+a[j - 1] = 0;
+if (n[j] == '1')
+a[j - 1] = 1;
+if (n[j] == '2')
+a[j - 1] = 2;
+if (n[j] == '3')
+a[j - 1] = 3;
+if (n[j] == '4')
+a[j - 1] = 4;
+if (n[j] == '5')
+a[j - 1] = 5;
+if (n[j] == '6')
+a[j - 1] = 6;
+if (n[j] == '7')
+a[j - 1] = 7;
+if (n[j] == '8')
+a[j - 1] = 8;
+if (n[j] == '9')
+a[j - 1] = 9;
+if (n[j] == 'a')
+a[j - 1] = 10;
+if (n[j] == 'b')
+a[j - 1] = 11;
+if (n[j] == 'c')
+a[j - 1] = 12;
+if (n[j] == 'd')
+a[j - 1] = 13;
+if (n[j] == 'e')
+a[j - 1] = 14;
+if (n[j] == 'f')
+a[j - 1] = 15;
+if (n[j] == 'g')
+a[j - 1] = 16;
+if (n[j] == 'h')
+a[j - 1] = 17;
+if (n[j] == 'i')
+a[j - 1] = 18;
+if (n[j] == 'j')
+a[j - 1] = 19;
+if (n[j] == 'k')
+a[j - 1] = 20;
+if (n[j] == 'l')
+a[j - 1] = 21;
+if (n[j] == 'm')
+a[j - 1] = 22;
+if (n[j] == 'n')
+a[j - 1] = 23;
+if (n[j] == 'o')
+a[j - 1] = 24;
+if (n[j] == 'p')
+a[j - 1] = 25;
+if (n[j] == 'q')
+a[j - 1] = 26;
+if (n[j] == 'r')
+a[j - 1] = 27;
+if (n[j] == 's')
+a[j - 1] = 28;
+if (n[j] == 't')
+a[j - 1] = 29;
+if (n[j] == 'u')
+a[j - 1] = 30;
+if (n[j] == 'v')
+a[j - 1] = 31;
+if (n[j] == 'w')
+a[j - 1] = 32;
+if (n[j] == 'x')
+a[j - 1] = 33;
+if (n[j] == 'y')
+a[j - 1] = 34;
+if (n[j] == 'z')
+a[j - 1] = 35;
+}
+for (int i = 0; i < dl - 1; i++)
+{
+sum = sum + a[i] * pow(sys1, st);
+st--;
+}
+dl = 1;
+a = (int*)realloc(a, dl * sizeof(int));
+while (sum >= sys2)
+{
+a[dl - 1] = sum % sys2;
+sum = sum / sys2;
+dl++;
+a = (int*)realloc(a, dl * sizeof(int));
+}
+a[dl - 1] = sum;
+for (int j = dl - 1; j >= 0; j--)
+{
+if (a[j] < 10)
+printf("%d", a[j]);
+if (a[j] == 10)
+printf("a");
+if (a[j] == 11)
+printf("b");
+if (a[j] == 12)
+printf("c");
+if (a[j] == 13)
+printf("d");
+if (a[j] == 14)
+printf("e");
+if (a[j] == 15)
+printf("f");
+if (a[j] == 16)
+printf("g");
+if (a[j] == 17)
+printf("h");
+if (a[j] == 18)
+printf("i");
+if (a[j] == 19)
+printf("j");
+if (a[j] == 20)
+printf("k");
+if (a[j] == 21)
+printf("l");
+if (a[j] == 22)
+printf("m");
+if (a[j] == 23)
+printf("n");
+if (a[j] == 24)
+printf("o");
+if (a[j] == 25)
+printf("p");
+if (a[j] == 26)
+printf("q");
+if (a[j] == 27)
+printf("r");
+if (a[j] == 28)
+printf("s");
+if (a[j] == 29)
+printf("t");
+if (a[j] == 30)
+printf("u");
+if (a[j] == 31)
+printf("v");
+if (a[j] == 32)
+printf("w");
+if (a[j] == 33)
+printf("x");
+if (a[j] == 34)
+printf("y");
+if (a[j] == 35)
+printf("z");
+
+}
+free(a);
+}
